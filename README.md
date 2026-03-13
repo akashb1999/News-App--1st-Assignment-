@@ -42,6 +42,6 @@ This project focuses on core React concepts:
 news =>
 ├──src
    ├── news1.tsx
-├──App.tsx
+├──Main.tsx
  
 ```
