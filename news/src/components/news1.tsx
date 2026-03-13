@@ -55,7 +55,11 @@ return (
         </select>
 
         <div className="">
-            
+            {articles.map((article, index) => (
+                <div className="" key={index}>
+                    
+                </div>
+            ))}
         </div>
     </div>
     </>
