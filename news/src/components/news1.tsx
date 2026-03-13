@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import loader from "./loader";
 
 type Article = {
     title: string;
@@ -6,8 +7,6 @@ type Article = {
     url: string;
     urlToImage: string;
 };
-
-const API_URL = "https://newsapi.org/v2/top-headlines?country=us&category=${category} & apiKey=${26a51f38ae6e432796e72eeef189a295}";
 
 const categories = [
  "general",
@@ -19,16 +18,19 @@ const categories = [
  "technology"
 ];
 
+const API_KEY = '26a51f38ae6e432796e72eeef189a295';
+
+
 const NewsApp: React.FC = () => {
     const [articles, setArticles] = useState<Article[]>([]);
     const [category, setCategory] = useState("general");
 
     const fetchNews = async () => {
     try {
-        const response = await fetch
-        (API_URL.replace("${category}", category));
+        const response = await fetch (`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${API_KEY}`);
         
-        const data = await response.json();
+        const data = await response.json ();
+        console.log(data);
         setArticles(data.articles);
     } catch (error) {
         console.error("Error fetching news:", error);
@@ -37,6 +39,9 @@ const NewsApp: React.FC = () => {
 useEffect(() => {
     fetchNews();
 }, [category]);
+
+
+
 
 return (
     <>
@@ -55,7 +60,6 @@ return (
         </select>
 
         <div className="mt-4 flex flex-row">
-            {/* make a loading statement */}
             
             {articles.map((article) => (
             <div className="mb-5 border border-gray-300 rounded-2xl" key={article.url}>
