@@ -54,9 +54,9 @@ return (
         ))}
         </select>
 
-        <div className="">
+        <div className="mt-4 flex flex-row">
             {articles.map((article, index) => (
-                <div className="" key={index}>
+                <div className="mb-5 border border-gray-300 rounded-2xl" key={index}>
                     <h3>{article.title}</h3>
                     <p>{article.description}</p>
                     <a href={article.url}>Read more</a>
