@@ -68,7 +68,7 @@ return (
             {articles.map((article) => (
             <div className="mb-5 bg-blue-900 border-x-8 border-x-yellow-600 rounded-2xl p-10 border-y-8 border-y-yellow-200 hover:shadow-2xl transition-all ease-in-out duration-300" key={article.url}>
                 <img src={article.urlToImage ? article.urlToImage : dImg } alt={article.title} />
-                <h3 className="font-extrabold text-center md:text-4xl sm:text-2xl text-white">{article.title}</h3>
+                <h3 className=" lg-font-bold mt-2 text-center lg:text-3xl md:text-2xl md:font-semibold sm:text-1xl text-white">{article.title}</h3>
                 <p className="md:text-1.5xl sm:text-1xl m-5 text-slate-300">{article.description || "No description available"}</p>
                 <a href={article.url} className="m-5 text-green-100 md:text-2xl sm:text-1xl underline animate-pulse hover:text-green-400 transition-all ease-in-out duration-300" target="_blank" rel="noopener noreferrer">Read more</a>
             </div>
