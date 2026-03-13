@@ -66,7 +66,7 @@ return (
 
         <div className="mt-4 sm:grid sm:grid-cols-1 md:grid-cols-2 flex flex-col justify-center gap-3">
             {articles.map((article) => (
-            <div className="mb-5 bg-blue-900 border-x-8 border-x-yellow-600 rounded-2xl p-10 border-y-8 border-y-yellow-200 bg-blue-950" key={article.url}>
+            <div className="mb-5 bg-blue-900 border-x-8 border-x-yellow-600 rounded-2xl p-10 border-y-8 border-y-yellow-200 " key={article.url}>
                 <img src={article.urlToImage ? article.urlToImage : dImg } alt={article.title} />
                 <h3 className="font-extrabold text-center md:text-4xl sm:text-2xl text-white">{article.title}</h3>
                 <p className="md:text-1.5xl sm:text-1xl m-5 text-slate-300">{article.description || "No description available"}</p>
