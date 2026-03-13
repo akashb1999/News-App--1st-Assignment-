@@ -45,7 +45,7 @@ return (
         <select
         value={category}
         onChange={(e) => setCategory(e.target.value)}
-        className="mt-4 p-2 border border-gray-300 rounded rounded-2xl flex text-2xl "
+        className="mt-4 p-1 border border-gray-300 rounded-2xl flex text-2xl"
         >
         {catagories.map((catagory) => (
             <option key={catagory} value={catagory}>
@@ -53,6 +53,10 @@ return (
             </option>
         ))}
         </select>
+
+        <div className="">
+            
+        </div>
     </div>
     </>
 );
