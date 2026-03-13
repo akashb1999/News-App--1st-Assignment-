@@ -7,7 +7,7 @@ type Article = {
     urlToImage: string;
 };
 
-const API_URL = "https://newsapi.org/v2/top-headlines?country=us&category=${category} & apiKey=${API_KEY}";
+const API_URL = "https://newsapi.org/v2/top-headlines?country=us&category=${category} & apiKey=${26a51f38ae6e432796e72eeef189a295}";
 
 const categories = [
  "general",
@@ -57,17 +57,17 @@ return (
         <div className="mt-4 flex flex-row">
             {/* make a loading statement */}
             
-            {articles.map((article, index) => (
-                <div className="mb-5 border border-gray-300 rounded-2xl" key={article.url}>
-                    <h3>{article.title}</h3>
-                    <p>{article.description || "No description available"}</p>
-                    <a href={article.url} target="_blank">Read more</a>
-                </div>
+            {articles.map((article) => (
+            <div className="mb-5 border border-gray-300 rounded-2xl" key={article.url}>
+                <h3>{article.title}</h3>
+                <p>{article.description || "No description available"}</p>
+                <a href={article.url} target="_blank" rel="noopener noreferrer">Read more</a>
+            </div>
             ))}
         </div>
     </div>
     </>
 );
-}
+};
 
 export default NewsApp
