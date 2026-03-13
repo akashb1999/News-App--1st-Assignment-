@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import Loader from "./Loader/loader";
 
 type Article = {
     title: string;
@@ -26,7 +27,7 @@ const NewsApp: React.FC = () => {
     const fetchNews = async () => {
     try {
         const response = await fetch
-        ("https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${API_KEY}");
+        (API_URl.replace("${category}", category));
         
         const data = await response.json();
         setArticles(data.articles);
@@ -55,13 +56,15 @@ return (
         </select>
 
         <div className="mt-4 flex flex-row">
+            {/* make a loading statement */}
+            
             {articles.map((article, index) => (
                 <div className="mb-5 border border-gray-300 rounded-2xl" key={index}>
                     <h3>{article.title}</h3>
                     <p>{article.description}</p>
                     <a href={article.url}>Read more</a>
                 </div>
-            ))}
+            ))};
         </div>
     </div>
     </>
