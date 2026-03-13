@@ -1,29 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 
-function loader() {
-    return (
-    <>
-        <div className="loader">
-            <div className="loader-inner">
-                <div className="loader-line-wrap">
-                    <div className="loader-line"></div>
-                </div>
-                <div className="loader-line-wrap">
-                    <div className="loader-line"></div>
-                </div>
-                <div className="loader-line-wrap">
-                    <div className="loader-line"></div>
-                </div>
-                <div className="loader-line-wrap">
-                    <div className="loader-line"></div>
-                </div>
-                <div className="loader-line-wrap">
-                    <div className="loader-line"></div>
-                </div>
-            </div>
-        </div>
-    </>
-    );
+
+function Loader() {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 2000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+    return <div>Loaded!</div>;
 }
 
-export default loader
+export default Loader;
+
