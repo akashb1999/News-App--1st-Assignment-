@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Loader from "./loader";
 import dImg from "../assets/defaultimg2.jpg";
 
-
 type Article = {
   title: string;
   description: string;
