@@ -39,6 +39,9 @@ This project focuses on core React concepts:
 ## 🏗 Project Structure
 
 ```
-src
- ├── App.ts
+news =>
+├──src
+   ├── news1.tsx
+├──App.tsx
+ 
 ```
