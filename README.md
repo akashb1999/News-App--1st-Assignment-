@@ -41,7 +41,8 @@ This project focuses on core React concepts:
 ```
 src
  ├── App.tsx
- ├── NewsApp.tsx
+ ├── Loader.tsx
+ ├── News1.tsx
  └── index.tsx
 ```
 
@@ -102,6 +103,7 @@ const API_KEY = "YOUR_API_KEY";
 
 ```
 https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${API_KEY}
+
 ```
 
 Parameters used:
@@ -137,7 +139,7 @@ Parameters used:
 
 ## 📚 Learning Outcome
 
-After completing this project you will understand:
+After completing this project, you will understand:
 
 * How React handles **side effects**
 * How to **trigger API calls based on state**
@@ -172,3 +174,7 @@ Possible enhancements:
 
 Made by :
 **Akash Bhattacharyya**.
+
+
+
+
