@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import Loader from "./loader";
-import { Oval } from "react-loader-spinner";
 
 type Article = {
     title: string;
@@ -25,7 +24,6 @@ const API_KEY = '26a51f38ae6e432796e72eeef189a295';
 const NewsApp: React.FC = () => {
     const [articles, setArticles] = useState<Article[]>([]);
     const [category, setCategory] = useState("general");
-    
 
     const fetchNews = async () => {
     try {
