@@ -1,23 +1,22 @@
 import React, {useState, useEffect} from "react";
-import Loader from "./Loader/loader";
 
 type Article = {
     title: string;
     description: string;
     url: string;
-    Image: FileList;
+    urlToImage: string;
 };
 
-const API_URl = "https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${API_KEY}";
+const API_URL = "https://newsapi.org/v2/top-headlines?country=us&category=${category} & apiKey=${API_KEY}";
 
-const catagories = [
-    "General", 
-    "Business", 
-    "Entertainment", 
-    "Health", 
-    "Science", 
-    "Sports", 
-    "Technology"
+const categories = [
+ "general",
+ "business",
+ "entertainment",
+ "health",
+ "science",
+ "sports",
+ "technology"
 ];
 
 const NewsApp: React.FC = () => {
@@ -27,7 +26,7 @@ const NewsApp: React.FC = () => {
     const fetchNews = async () => {
     try {
         const response = await fetch
-        (API_URl.replace("${category}", category));
+        (API_URL.replace("${category}", category));
         
         const data = await response.json();
         setArticles(data.articles);
@@ -48,7 +47,7 @@ return (
         onChange={(e) => setCategory(e.target.value)}
         className="mt-4 p-1 border border-gray-300 rounded-2xl flex text-2xl"
         >
-        {catagories.map((catagory) => (
+        {categories.map((catagory) => (
             <option key={catagory} value={catagory}>
             {catagory}
             </option>
@@ -59,12 +58,12 @@ return (
             {/* make a loading statement */}
             
             {articles.map((article, index) => (
-                <div className="mb-5 border border-gray-300 rounded-2xl" key={index}>
+                <div className="mb-5 border border-gray-300 rounded-2xl" key={article.url}>
                     <h3>{article.title}</h3>
-                    <p>{article.description}</p>
-                    <a href={article.url}>Read more</a>
+                    <p>{article.description || "No description available"}</p>
+                    <a href={article.url} target="_blank">Read more</a>
                 </div>
-            ))};
+            ))}
         </div>
     </div>
     </>
