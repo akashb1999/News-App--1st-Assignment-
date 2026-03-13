@@ -1,20 +1,26 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 
-function Loader() {
-    const [loading, setLoading] = useState(true);
+// function Loader() {
+//     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 2000);
-        return () => clearTimeout(timer);
-    }, []);
+//     useEffect(() => {
+//         const timer = setTimeout(() => {
+//             setLoading(false);
+//         }, 2000);
+//         return () => clearTimeout(timer);
+//     }, []);
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-    return <div>Loaded!</div>;
+//     if (loading) {
+//         return <div>Loading...</div>;
+//     }
+//     return <div>Loaded!</div>;
+// }
+
+// export default Loader;
+import { TailSpin } from "react-loader-spinner";
+
+function loader () {
+    return <TailSpin />
 }
 
-export default Loader;
-
+export default loader

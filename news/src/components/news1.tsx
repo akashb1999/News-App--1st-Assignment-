@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Loader from "./loader";
+import Demo from "./loader";
 
 type Article = {
     title: string;
