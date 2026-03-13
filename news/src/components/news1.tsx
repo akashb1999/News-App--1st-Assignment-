@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Loader from "./loader";
-import Demo from "./loader";
+import { InfinitySpin } from "react-loader-spinner";
 
 type Article = {
     title: string;
@@ -44,7 +44,7 @@ useEffect(() => {
 
 
 if (articles.length === 0) {
-    return <Loader />;
+    return <InfinitySpin/>;
 }
 
 return (

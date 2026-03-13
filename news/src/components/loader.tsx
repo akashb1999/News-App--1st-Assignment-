@@ -11,7 +11,7 @@ function Loader() {
     }, []);
 
     if (loading) {
-        return <h2 className="flex justify-center font-extrabold p-10">Loading...</h2>;
+        return <h2 className="flex justify-center font-extrabold p-10 text-5xl">Loading...</h2>;
     }
     return <div>Loaded!</div>;
 };
