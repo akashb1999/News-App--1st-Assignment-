@@ -6,7 +6,7 @@ The project demonstrates how to fetch API data on component mount, use controlle
 
 ---
 ![newsapp1](https://github.com/user-attachments/assets/76d6790c-7385-4d1f-97b6-52a95844aa67)
-
+---
 ## 🚀 Features
 
 * Fetch **top headlines** from NewsAPI
