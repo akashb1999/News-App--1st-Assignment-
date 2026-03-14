@@ -12,7 +12,7 @@ function Loader() {
 
     if (loading) {
         return <>
-        <h2 className="flex justify-center font-extrabold p-10 text-5xl m-20 ">Loading...</h2>;
+        <h2 className="flex justify-center font-extrabold p-10 m-20 text-8xl text-gray-900">Loading...</h2>;
         <div className="flex justify-center items-center">
         <div className="h-20 w-20 border-4 border-t-blue-500 border-r-red-500 border-b-yellow-400 border-l-green-500 rounded-full animate-spin m-20"></div>
     </div>
