@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Loader from "./loader";
 import dImg from "../assets/defaultimg2.jpg";
+import Spinner from "./loader";
 
 type Article = {
   title: string;
@@ -43,7 +44,7 @@ const NewsApp: React.FC = () => {
   }, [category]);
 
   if (articles.length === 0) {
-    return <Loader />;
+    return <Spinner />;
   }
 
   return (
